@@ -33,8 +33,7 @@
                             <% if (module.modname == "folder"){ %>
                                 <a href="#course/contents/<%= courseId %>/section/<%= sectionId %>/folder/<%= module.contentid %>" id="link-<%= module.contentid %>">
                             <% } else { %>
-                                <a href="#" onclick="window.open('<% print(MM.fs.getRoot() + "/" + module.contents[0].localpath); %>','_system','location=yes')">
-
+                                <a target="_system" href="<% print(MM.fs.getRoot() + "/" + module.contents[0].localpath); %>" rel="external" id="link-<%= module.contentid %>">
                             <% }%>
                         <% } else if (module.modname != "label"){ %>
                              <% if (module.modname == "folder"){ %>
