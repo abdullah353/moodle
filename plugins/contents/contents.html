@@ -31,17 +31,18 @@
                     <div class="content-name mod-<%= module.modname %>">
                         <% if (module.downloaded) { %>
                             <% if (module.modname == "folder"){ %>
-                               <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">
+                                <a href="#course/contents/<%= courseId %>/section/<%= sectionId %>/folder/<%= module.contentid %>" id="link-<%= module.contentid %>">
                             <% } else { %>
-                                <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">
+                                <a href="#" onclick="window.open('<% print(MM.fs.getRoot() + "/" + module.contents[0].localpath); %>','_system','location=yes')">
+
                             <% }%>
                         <% } else if (module.modname != "label"){ %>
                              <% if (module.modname == "folder"){ %>
-                                <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">
+                                <a href="#course/contents/<%= courseId %>/section/<%= sectionId %>/folder/<%= module.contentid %>" id="link-<%= module.contentid %>">
                             <% } else if(module.webOnly){ %>
-                               <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">
+                                <a href="<%= module.url %>" target="_blank" id="link-<%= module.contentid %>">
                             <% } else { %>
-                               <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">
+                                <a href="#course/contents/<%= courseId %>/section/<%= sectionId %>/download/<%= module.contentid %>" id="link-<%= module.contentid %>">
                             <% } %>
                         <% } %>
                         <% if (module.modname != "label"){ %>
